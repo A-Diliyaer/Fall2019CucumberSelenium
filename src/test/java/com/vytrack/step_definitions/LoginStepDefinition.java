@@ -24,6 +24,13 @@ public class LoginStepDefinition {
         System.out.println("login as sales manager");
         loginPage.login("salesmanager110","UserUser123");
     }
+
+    @When("user logs in as a store manager")
+    public void user_logs_in_as_a_store_manager() {
+        System.out.println("login as store manager");
+        loginPage.login("storemanager85","UserUser123");
+    }
+
     @Then("user should verify that title is Dashboard")
     public void user_should_verify_that_title_is_Dashboard() {
         System.out.println("verify that title is dashboard");
