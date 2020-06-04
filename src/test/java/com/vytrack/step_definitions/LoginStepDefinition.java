@@ -1,6 +1,7 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.LoginPage;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -12,8 +13,8 @@ public class LoginStepDefinition {
 
     LoginPage loginPage = new LoginPage();
 
-    @Given("user is on the landing page")
-    public void user_is_on_the_landing_page() {
+    @Given("user is on the login page")
+    public void user_is_on_the_login_page() {
         System.out.println("open login page");
         String URL = ConfigurationReader.getProperty("qa3");
         Driver.getDriver().get(URL);
@@ -31,10 +32,15 @@ public class LoginStepDefinition {
         loginPage.login("storemanager85","UserUser123");
     }
 
+    @When("user logs in as a driver")
+    public void user_logs_in_as_a_driver() {
+        System.out.println("Login as a driver");
+        loginPage.login("user19","UserUser123");
+    }
+
     @Then("user should verify that title is Dashboard")
     public void user_should_verify_that_title_is_Dashboard() {
         System.out.println("verify that title is dashboard");
         Assert.assertEquals("Dashboard",Driver.getDriver().getTitle());
-        Driver.closeDriver();
     }
 }
