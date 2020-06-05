@@ -5,6 +5,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class CreateCalendarEventStepDefinitions {
 
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
@@ -41,5 +43,19 @@ public class CreateCalendarEventStepDefinitions {
     @And("user verifies that title of new calendar event is {string}")
     public void userVerifiesThatTitleOfNewCalendarEventIs(String title) {
         Assert.assertEquals(title,calendarEventsPage.getGeneralInfoTitleText());
+    }
+
+    @Then("user enters new calendar event information:")
+    public void userEntersNewCalendarEventInformation(Map<String,String> dataTable) {
+        calendarEventsPage.enterCalendarEventTitle(dataTable.get("title"));
+        calendarEventsPage.enterCalendarEventDescription(dataTable.get("description"));
+
+    }
+
+    @Then("user verifies new calendar event")
+    public void userVerifiesNewCalendarEvent(Map<String,String> dataTable) {
+        Assert.assertEquals(dataTable.get("title"),calendarEventsPage.getGeneralInfoTitleText());
+        Assert.assertEquals(dataTable.get("description"),calendarEventsPage.getGeneralInfoDescriptionText());
+
     }
 }

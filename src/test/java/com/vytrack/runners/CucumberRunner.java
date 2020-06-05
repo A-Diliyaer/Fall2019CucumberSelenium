@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         glue = "com/vytrack/step_definitions",
         features = "src/test/resources/features",
         dryRun = false,
-        strict = false,
-        tags = "@activities", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
+        strict = true,
+        tags = "@create_calendar_Event_2", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
         plugin = {
                 "html:target/cucumber-html-report",
                 "json:target/cucumber.json"
