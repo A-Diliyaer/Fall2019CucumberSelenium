@@ -43,4 +43,10 @@ public class LoginStepDefinition {
         System.out.println("verify that title is dashboard");
         Assert.assertEquals("Dashboard",Driver.getDriver().getTitle());
     }
+
+    @When("user enters {string} username and {string} password")
+    public void userEntersUsernameAndPassword(String arg0, String arg1) {
+        System.out.printf("Login with user name %s and %s password\n",arg0,arg1);
+        loginPage.login(arg0,arg1);
+    }
 }

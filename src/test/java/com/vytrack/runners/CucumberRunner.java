@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         dryRun = false,
         strict = false,
-        tags = "", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
+        tags = "@login_with_params", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
         plugin = {
                 "html:target/cucumber-html-report",
         }
