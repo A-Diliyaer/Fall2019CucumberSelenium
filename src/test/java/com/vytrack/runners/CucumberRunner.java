@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
         tags = "@activities", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
         plugin = {
                 "html:target/cucumber-html-report",
+                "json:target/cucumber.json"
         }
 
 )
