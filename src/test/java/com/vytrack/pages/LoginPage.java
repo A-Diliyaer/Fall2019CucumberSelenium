@@ -26,11 +26,6 @@ public class LoginPage extends AbstractPageBase {
     private WebElement warningMsg;
 
 
-    public LoginPage(){
-
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-
     /**
      * method to login version 1
      * login as a specific user
