@@ -1,6 +1,6 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.CalendarEventsPage;
+import com.vytrack.pages.activities.CalendarEventsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;

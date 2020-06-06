@@ -30,6 +30,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version> 2.21.0</version>
                 <configuration>
+                    <parallel>classes</parallel>
+                    <threadCount>2</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <forkCount>2C</forkCount>
                     <includes>
                         <include>**/*Runner.java</include>
                     </includes>
@@ -56,7 +60,7 @@
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
                                 <!-- supports wildcard or name pattern -->
-                                <param>**/cucumber.json</param>
+                                <param>**/cucumber*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>

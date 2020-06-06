@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         tags = "@create_calendar_Event_2", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
         plugin = {
                 "html:target/cucumber-html-report",
-                "json:target/cucumber.json"
+                "json:target/cucumber1.json"
         }
 
 )

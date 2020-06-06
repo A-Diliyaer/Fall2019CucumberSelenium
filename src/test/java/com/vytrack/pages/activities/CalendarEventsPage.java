@@ -1,5 +1,6 @@
-package com.vytrack.pages;
+package com.vytrack.pages.activities;
 
+import com.vytrack.pages.AbstractPageBase;
 import com.vytrack.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class CalendarEventsPage extends AbstractPageBase{
+public class CalendarEventsPage extends AbstractPageBase {
 
     @FindBy(css = "[title='Create Calendar event']")
     private WebElement createCalendarEvent;
@@ -45,6 +46,18 @@ public class CalendarEventsPage extends AbstractPageBase{
 
     @FindBy(xpath = "//label[text()='Description']/following-sibling::div//p[1]")
     private WebElement generalInfoDescription;
+
+    @FindBy(xpath = "//*[contains(text(),'View per page:')]/following-sibling::*//a")
+    private List<WebElement> viewPerPageElements;
+
+    @FindBy(css = "button[class*='btn dropdown-toggle']")
+    private WebElement viewPerPageToggle;
+
+    public List<String> getViewPerPageOptions(){
+        BrowserUtils.waitForLoad();
+        viewPerPageToggle.click();
+        return BrowserUtils.getTextFromWebElements(viewPerPageElements);
+    }
 
     public void enterCalendarEventTitle(String titleValue){
         BrowserUtils.waitForLoad();
