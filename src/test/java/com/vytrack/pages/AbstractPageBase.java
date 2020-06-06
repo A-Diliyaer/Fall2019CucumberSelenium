@@ -63,6 +63,8 @@ public abstract class AbstractPageBase {
                 click(moduleElement).
                 build().perform();
 
+        BrowserUtils.waitForLoad();
+
     }
 
     public void clickOnSaveAndClose(){

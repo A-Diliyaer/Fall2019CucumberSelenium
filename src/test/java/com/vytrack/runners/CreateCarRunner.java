@@ -7,17 +7,15 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = "com/vytrack/step_definitions",
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/fleet",
         dryRun = false,
         strict = false,
-        tags = "@create_car_ddt", //"@sales_manager or @driver"----runs both tests, "and" runs test that have both tags
+        tags = "@create_car",
         plugin = {
-                "html:target/cucumber-html-report",
-                "json:target/cucumber1.json"
+                "html:target/default-report",
+                "json:target/cucumber2.json"
         }
-
 )
-public class CucumberRunner {
-
+public class CreateCarRunner {
 
 }

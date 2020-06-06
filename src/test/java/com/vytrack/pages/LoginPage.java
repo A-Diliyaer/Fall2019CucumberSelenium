@@ -55,6 +55,27 @@ public class LoginPage extends AbstractPageBase {
     }
 
     /**
+     * this method stands for login based on user type
+     * if paramter is not correct method will throw exception
+     * @param role - driver, sales manager, store manager
+     */
+    public void login(String role){
+        String userName = "";
+        if (role.equalsIgnoreCase("driver")){
+            userName="user15";
+        }else if(role.equalsIgnoreCase("sales manager")){
+            userName="salesmanager110";
+        }else if (role.equalsIgnoreCase("store manager")){
+            userName="storemanager85";
+        }else{
+            throw new RuntimeException("invalid role");
+        }
+        System.out.println("Login as "+role);
+        login(userName,"UserUser123");
+
+    }
+
+    /**
      * return warning msg if credentials are not correct
      * @return
      */
