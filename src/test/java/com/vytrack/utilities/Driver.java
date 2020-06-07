@@ -9,12 +9,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
 
     private static WebDriver driver;
-
+//    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
     private Driver(){
 
     }
 
-    public static WebDriver getDriver(){
+    public synchronized static WebDriver getDriver(){
         if (driver==null){
             String browser = com.vytrack.utilities.ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser){
@@ -23,16 +23,20 @@ public class Driver {
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("---start-maximized");
                     driver = new ChromeDriver(chromeOptions);
+//                    driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "chromeheadless":
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.setHeadless(true);
                     driver = new ChromeDriver(options);
+//                    driverPool.set(new ChromeDriver(options));
+
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver=new FirefoxDriver();
+//                    driverPool.set(new FirefoxDriver());
                     break;
                 default:
                     throw new RuntimeException("Wrong browser name!");
