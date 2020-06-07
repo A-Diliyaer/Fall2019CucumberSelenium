@@ -50,7 +50,7 @@ public class BrowserUtils {
      * wait for page load after click action
      */
     public static void waitForLoad(){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
         By mask =By.xpath("//body/div[4]");
         wait.until(ExpectedConditions.presenceOfElementLocated(mask));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(mask));
