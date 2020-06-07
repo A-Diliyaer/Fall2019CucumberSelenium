@@ -45,6 +45,31 @@
                             <!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
                         </configuration>
                     </plugin>
+                    <plugin>
+                        <groupId>net.masterthought</groupId>
+                        <artifactId>maven-cucumber-reporting</artifactId>
+                        <version>5.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>execution</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <projectName>Cucumber HTML Reports</projectName>
+                                    <!-- output directory for the generated report -->
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <!-- optional, defaults to outputDirectory if not specified -->
+                                    <inputDirectory>${project.build.directory}</inputDirectory>
+                                    <jsonFiles>
+                                        <!-- supports wildcard or name pattern -->
+                                        <param>**/cucumber*.json</param>
+                                    </jsonFiles>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
