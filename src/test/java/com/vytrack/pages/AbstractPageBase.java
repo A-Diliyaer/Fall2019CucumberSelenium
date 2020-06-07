@@ -52,6 +52,7 @@ public abstract class AbstractPageBase {
     public void navigateTo(String tabName, String moduleName){
         String tabNameXpath ="//span[@class='title title-level-1' and contains(text(),'"+tabName+"')]";
         String moduleXpath = "//span[@class='title title-level-2' and text()='"+moduleName+"']";
+        BrowserUtils.waitForLoad();
 
         WebElement tabElement = driver.findElement(By.xpath(tabNameXpath));
         WebElement moduleElement = driver.findElement(By.xpath(moduleXpath));

@@ -20,8 +20,8 @@ import org.testng.annotations.DataProvider;
 public class SmokeTestRunner extends AbstractTestNGCucumberTests {
 
         @Override
-        @DataProvider
+        @DataProvider(parallel = true)
         public Object[][] scenarios(){
-                if (testNGCucumberRunner )
+                return super.scenarios();
         }
 }
