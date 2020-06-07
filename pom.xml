@@ -33,13 +33,13 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version> 2.21.0</version>
                         <configuration>
-                            <parallel>classes</parallel>
-                            <threadCount>2</threadCount>
-                            <perCoreThreadCount>false</perCoreThreadCount>
-                            <forkCount>2C</forkCount>
-                            <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
+                            <parallel>methods</parallel>
+<!--                            <threadCount>2</threadCount>-->
+<!--                            <perCoreThreadCount>false</perCoreThreadCount>-->
+<!--                            <forkCount>2C</forkCount>-->
+                            <useUnlimitedThreads>true</useUnlimitedThreads>
                             <includes>
-                                <include>**/SmokeTestRunner.java</include>
+                                <include>**/*Runner.java</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
                             <!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
@@ -67,11 +67,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version> 2.21.0</version>
                 <configuration>
-                    <parallel>classes</parallel>
-                    <threadCount>2</threadCount>
-                    <perCoreThreadCount>false</perCoreThreadCount>
-                    <forkCount>2C</forkCount>
-<!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
+                    <parallel>methods</parallel>
+<!--                    <threadCount>2</threadCount>-->
+<!--                    <perCoreThreadCount>false</perCoreThreadCount>-->
+<!--                    <forkCount>2C</forkCount>-->
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
                     <includes>
                         <include>**/*Runner.java</include>
                     </includes>
