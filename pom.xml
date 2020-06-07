@@ -39,7 +39,7 @@
 <!--                            <forkCount>2C</forkCount>-->
                             <useUnlimitedThreads>true</useUnlimitedThreads>
                             <includes>
-                                <include>**/*Runner.java</include>
+                                <include>**/SmokeTestRunner.java</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
                             <!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
