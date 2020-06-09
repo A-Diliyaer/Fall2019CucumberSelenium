@@ -17,6 +17,9 @@ public class Driver {
     public synchronized static WebDriver getDriver(){
         if (driverPool.get()==null){
             String browser = com.vytrack.utilities.ConfigurationReader.getProperty("browser").toLowerCase();
+//            if(System.getProperty("browser") !=null){
+//                browser=System.getProperty("browser");
+//            }
             switch (browser){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
